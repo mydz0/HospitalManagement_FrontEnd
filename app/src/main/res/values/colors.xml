@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta para el Login -->
+    <color name="medical_primary">#0077B6</color>
+    <color name="medical_secondary">#00B4D8</color>
+    <color name="medical_background">#F0F4F8</color>
+    <color name="medical_surface">#FFFFFF</color>
+    <color name="medical_error">#D62828</color>
+    <color name="medical_success">#2A9D8F</color>
+    <color name="text_dark">#1D3557</color>
 </resources>
