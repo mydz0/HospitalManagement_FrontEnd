@@ -1,5 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AppEnfermeria</string>
+    <string name="app_name">HospitalManagement</string>
+
+    <!-- comunes -->
+    <string name="logo_desc">Logo de la aplicación</string>
+    <string name="back_home_button">Volver a Inicio</string>
 
     <!-- Textos Pantalla Login -->
     <string name="login_title">Iniciar Sesión</string>
@@ -7,17 +12,9 @@
     <string name="nurse_id_label">ID de enfermero</string>
     <string name="password_label">Contraseña</string>
     <string name="login_button">Entrar</string>
-    <string name="back_home_button">Volver a Inicio</string>
     <string name="toggle_password_desc">Ver contraseña</string>
-    <string name="logo_desc">Icono enfermero</string>
     <string name="error_empty_fields">Rellena todos los campos</string>
     <string name="login_success_msg">Login correcto</string>
-</resources>
-    <string name="app_name">HospitalManagement</string>
-
-    <!-- comunes -->
-    <string name="logo_desc">Logo de la aplicación</string>
-    <string name="back_home_button">Volver a Inicio</string>
 
     <!-- busqueda -->
     <string name="search_title">Buscar Enfermero</string>
