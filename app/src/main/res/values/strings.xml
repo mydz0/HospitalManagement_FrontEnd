@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">HospitalManagement</string>
+    <string name="app_name_enfermeria">Enfermería</string>
+    <string name="listar_titulo">Enfermeros registrados</string>
+    <string name="listar_subtitulo">Toca un enfermero para ver sus detalles</string>
+    <string name="listar_volver">Volver a Inicio</string>
+    <string name="listar_desc_logo">Logo de enfermería</string>
+    <string name="listar_desc_enfermero">Icono de enfermero</string>
+    <string name="listar_etiqueta_id">ID: %1$s</string>
+    <string name="listar_etiqueta_turno">Turno: %1$s</string>
+    <string name="listar_etiqueta_telefono">Teléfono: %1$s</string>
+
+    <!-- Datos de ejemplo -->
+    <string name="enf_laura_nombre">Laura Martínez</string>
+    <string name="enf_laura_esp">Cuidados intensivos</string>
+    <string name="enf_carlos_nombre">Carlos Gómez</string>
+    <string name="enf_carlos_esp">Urgencias</string>
+    <string name="enf_marta_nombre">Marta Ruiz</string>
+    <string name="enf_marta_esp">Pediatría</string>
+    <string name="enf_pablo_nombre">Pablo Serrano</string>
+    <string name="enf_pablo_esp">Quirófano</string>
+    <string name="turno_manana">Mañana</string>
+    <string name="turno_tarde">Tarde</string>
+    <string name="turno_noche">Noche</string>
 </resources>
