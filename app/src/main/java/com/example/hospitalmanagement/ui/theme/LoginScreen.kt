@@ -16,11 +16,23 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+private data class UsuarioEnfermero(
+    val codigo: String,
+    val nombre: String,
+    val password: String
+)
+
 @Composable
 fun LoginScreen(
     onNavigateBack: () -> Unit = {},
     onLoginSubmit: (identificador: String, password: String) -> Unit = { _, _ -> }
 ) {
+    val usuariosValidos = listOf(
+        UsuarioEnfermero("ENF001", "Tamara Bermudez", "1234"),
+        UsuarioEnfermero("ENF002", "Carlos Ruiz", "admin"),
+        UsuarioEnfermero("ENF003", "Laura Gomez", "enfermeria2026")
+    )
+
     var identificador by remember { mutableStateOf("") } // Puede ser ID o nombre
     var password by remember { mutableStateOf("") }
     var mensajeEstado by remember { mutableStateOf("") }
@@ -99,9 +111,20 @@ fun LoginScreen(
                     hayError = true
                     mensajeEstado = textoError
                 } else {
-                    hayError = false
-                    mensajeEstado = textoOk
-                    onLoginSubmit(limpio, password)
+                    val encontrado = usuariosValidos.find {
+                        (it.codigo.equals(limpio, ignoreCase = true) ||
+                                it.nombre.equals(limpio, ignoreCase = true)) &&
+                                it.password == password
+                    }
+
+                    if (encontrado != null) {
+                        hayError = false
+                        mensajeEstado = textoOk
+                        onLoginSubmit(limpio, password)
+                    } else {
+                        hayError = true
+                        mensajeEstado = "Usuario o contraseña incorrectos"
+                    }
                 }
             },
             colors = ButtonDefaults.buttonColors(containerColor = colorPrincipal),
