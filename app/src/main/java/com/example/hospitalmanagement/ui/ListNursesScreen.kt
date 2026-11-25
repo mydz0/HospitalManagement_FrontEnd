@@ -1,6 +1,5 @@
 package com.example.hospitalmanagement.ui
 
-import androidx.annotation.StringRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -37,53 +36,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.hospitalmanagement.R
-
-data class Enfermero(
-    val id: String,
-    @StringRes val nombre: Int,
-    @StringRes val especialidad: Int,
-    @StringRes val turno: Int,
-    val telefono: String
-)
-
-private val enfermeros = listOf(
-    Enfermero(
-        "E001",
-        R.string.enf_laura_nombre,
-        R.string.enf_laura_esp,
-        R.string.turno_manana,
-        "600 111 222"
-    ),
-    Enfermero(
-        "E002",
-        R.string.enf_carlos_nombre,
-        R.string.enf_carlos_esp,
-        R.string.turno_tarde,
-        "600 333 444"
-    ),
-    Enfermero(
-        "E003",
-        R.string.enf_marta_nombre,
-        R.string.enf_marta_esp,
-        R.string.turno_noche,
-        "600 555 666"
-    ),
-    Enfermero(
-        "E004",
-        R.string.enf_pablo_nombre,
-        R.string.enf_pablo_esp,
-        R.string.turno_manana,
-        "600 777 888"
-    )
-)
+import com.example.hospitalmanagement.data.listaEnfermeros
+import com.example.hospitalmanagement.model.Nurse
 
 @Composable
-fun ListaEnfermerosScreen(
-    onVolverInicio: () -> Unit,
+fun ListNursesScreen(
+    onNavigateBack: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     // mutableState modificado con un click: id del enfermero desplegado
-    var seleccionado by remember { mutableStateOf<String?>(null) }
+    var seleccionado by remember { mutableStateOf<Int?>(null) }
 
     Column(
         modifier = modifier
@@ -126,7 +88,7 @@ fun ListaEnfermerosScreen(
             modifier = Modifier.weight(1f),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            items(enfermeros) { enfermero ->
+            items(listaEnfermeros) { enfermero ->
                 EnfermeroItem(
                     enfermero = enfermero,
                     expandido = seleccionado == enfermero.id,
@@ -139,7 +101,7 @@ fun ListaEnfermerosScreen(
 
         Spacer(Modifier.height(16.dp))
 
-        TextButton(onClick = onVolverInicio) {
+        TextButton(onClick = onNavigateBack) {
             Text(
                 text = stringResource(R.string.listar_volver),
                 color = colorResource(R.color.enf_primary),
@@ -151,7 +113,7 @@ fun ListaEnfermerosScreen(
 
 @Composable
 fun EnfermeroItem(
-    enfermero: Enfermero,
+    enfermero: Nurse,
     expandido: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
@@ -179,13 +141,13 @@ fun EnfermeroItem(
             Spacer(Modifier.width(16.dp))
             Column {
                 Text(
-                    text = stringResource(enfermero.nombre),
+                    text = enfermero.name,
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold,
                     color = colorResource(R.color.enf_title)
                 )
                 Text(
-                    text = stringResource(enfermero.especialidad),
+                    text = enfermero.specialty,
                     fontSize = 14.sp,
                     color = colorResource(R.color.enf_subtitle)
                 )
@@ -195,18 +157,15 @@ fun EnfermeroItem(
         if (expandido) {
             Spacer(Modifier.height(12.dp))
             Text(
-                text = stringResource(R.string.listar_etiqueta_id, enfermero.id),
+                text = stringResource(R.string.listar_etiqueta_id, enfermero.id.toString()),
                 color = colorResource(R.color.enf_title)
             )
             Text(
-                text = stringResource(
-                    R.string.listar_etiqueta_turno,
-                    stringResource(enfermero.turno)
-                ),
+                text = stringResource(R.string.listar_etiqueta_turno, enfermero.shift),
                 color = colorResource(R.color.enf_title)
             )
             Text(
-                text = stringResource(R.string.listar_etiqueta_telefono, enfermero.telefono),
+                text = stringResource(R.string.listar_etiqueta_telefono, enfermero.phone),
                 color = colorResource(R.color.enf_title)
             )
         }
@@ -215,6 +174,6 @@ fun EnfermeroItem(
 
 @Preview(showBackground = true)
 @Composable
-fun ListaEnfermerosScreenPreview() {
-    ListaEnfermerosScreen(onVolverInicio = {})
+fun ListNursesScreenPreview() {
+    ListNursesScreen()
 }
