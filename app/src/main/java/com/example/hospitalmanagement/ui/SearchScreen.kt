@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.hospitalmanagement.R
 import com.example.hospitalmanagement.model.Nurse
-import com.example.hospitalmanagement.model.listaEnfermeros
+import com.example.hospitalmanagement.data.listaEnfermeros
 
 @Composable
 fun SearchScreen(

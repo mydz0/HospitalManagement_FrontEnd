@@ -1,4 +1,4 @@
-package com.example.hospitalmanagement
+package com.example.hospitalmanagement.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -15,24 +15,16 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
-private data class UsuarioEnfermero(
-    val codigo: String,
-    val nombre: String,
-    val password: String
-)
+import com.example.hospitalmanagement.R
+import com.example.hospitalmanagement.data.buscarEnfermeroLogin
+import com.example.hospitalmanagement.model.Nurse
 
 @Composable
 fun LoginScreen(
     onNavigateBack: () -> Unit = {},
-    onLoginSubmit: (identificador: String, password: String) -> Unit = { _, _ -> }
+    //se llama cuando el login es correcto (los datos estan en data/MockData.kt)
+    onLoginSuccess: (Nurse) -> Unit = {}
 ) {
-    val usuariosValidos = listOf(
-        UsuarioEnfermero("ENF001", "Tamara Bermudez", "1234"),
-        UsuarioEnfermero("ENF002", "Carlos Ruiz", "admin"),
-        UsuarioEnfermero("ENF003", "Laura Gomez", "enfermeria2026")
-    )
-
     var identificador by remember { mutableStateOf("") } // Puede ser ID o nombre
     var password by remember { mutableStateOf("") }
     var mensajeEstado by remember { mutableStateOf("") }
@@ -46,6 +38,7 @@ fun LoginScreen(
 
     val textoError = stringResource(id = R.string.error_empty_fields)
     val textoOk = stringResource(id = R.string.login_success_msg)
+    val textoIncorrecto = stringResource(id = R.string.login_error_credentials)
 
     Column(
         modifier = Modifier
@@ -77,7 +70,7 @@ fun LoginScreen(
         OutlinedTextField(
             value = identificador,
             onValueChange = { identificador = it },
-            label = { Text("ID o nombre de enfermero") },
+            label = { Text(stringResource(id = R.string.login_id_label)) },
             singleLine = true,
             modifier = Modifier.fillMaxWidth()
         )
@@ -111,19 +104,15 @@ fun LoginScreen(
                     hayError = true
                     mensajeEstado = textoError
                 } else {
-                    val encontrado = usuariosValidos.find {
-                        (it.codigo.equals(limpio, ignoreCase = true) ||
-                                it.nombre.equals(limpio, ignoreCase = true)) &&
-                                it.password == password
-                    }
+                    val encontrado = buscarEnfermeroLogin(limpio, password)
 
                     if (encontrado != null) {
                         hayError = false
                         mensajeEstado = textoOk
-                        onLoginSubmit(limpio, password)
+                        onLoginSuccess(encontrado)
                     } else {
                         hayError = true
-                        mensajeEstado = "Usuario o contraseña incorrectos"
+                        mensajeEstado = textoIncorrecto
                     }
                 }
             },

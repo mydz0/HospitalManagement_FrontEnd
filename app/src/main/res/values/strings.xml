@@ -1,6 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">HospitalManagement</string>
+    <string name="app_name">AppEnfermeria</string>
+
+    <!-- comunes -->
     <string name="app_name_enfermeria">Enfermería</string>
+    <string name="logo_desc">Icono enfermero</string>
+    <string name="back_home_button">Volver a Inicio</string>
+
+    <!-- Pantalla Inicial (Home) -->
+    <string name="home_welcome">Bienvenido a tu espacio de trabajo</string>
+    <string name="home_profile_desc">Perfil</string>
+    <string name="home_profile_info">Todavía no has iniciado sesión. Pulsa «Iniciar sesión» para entrar.</string>
+    <string name="home_option_login">Iniciar\nsesión</string>
+    <string name="home_option_list">Listar\nenfermeros</string>
+    <string name="home_option_search">Buscar\nenfermeras</string>
+    <string name="home_option_logged">Sesión\niniciada</string>
+    <string name="home_greeting">Hola, %1$s</string>
+    <string name="home_profile_logged">Has iniciado sesión como %1$s.</string>
+    <string name="home_logout">Cerrar sesión</string>
+
+    <!-- Pantalla Login -->
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="login_subtitle">Introduce tus datos de enfermero/a</string>
+    <string name="login_id_label">ID, usuario o nombre</string>
+    <string name="nurse_id_label">ID de enfermero</string>
+    <string name="password_label">Contraseña</string>
+    <string name="login_button">Entrar</string>
+    <string name="toggle_password_desc">Ver contraseña</string>
+    <string name="error_empty_fields">Rellena todos los campos</string>
+    <string name="login_success_msg">Login correcto</string>
+    <string name="login_error_credentials">Usuario o contraseña incorrectos</string>
+
+    <!-- Pantalla Listar enfermeros -->
     <string name="listar_titulo">Enfermeros registrados</string>
     <string name="listar_subtitulo">Toca un enfermero para ver sus detalles</string>
     <string name="listar_volver">Volver a Inicio</string>
@@ -10,34 +41,7 @@
     <string name="listar_etiqueta_turno">Turno: %1$s</string>
     <string name="listar_etiqueta_telefono">Teléfono: %1$s</string>
 
-    <!-- Datos de ejemplo -->
-    <string name="enf_laura_nombre">Laura Martínez</string>
-    <string name="enf_laura_esp">Cuidados intensivos</string>
-    <string name="enf_carlos_nombre">Carlos Gómez</string>
-    <string name="enf_carlos_esp">Urgencias</string>
-    <string name="enf_marta_nombre">Marta Ruiz</string>
-    <string name="enf_marta_esp">Pediatría</string>
-    <string name="enf_pablo_nombre">Pablo Serrano</string>
-    <string name="enf_pablo_esp">Quirófano</string>
-    <string name="turno_manana">Mañana</string>
-    <string name="turno_tarde">Tarde</string>
-    <string name="turno_noche">Noche</string>
-</resources>
-    <string name="app_name">AppEnfermeria</string>
-
-    <!-- Textos Pantalla Login -->
-    <string name="login_title">Iniciar Sesión</string>
-    <string name="login_subtitle">Introduce tus datos de enfermero/a</string>
-    <string name="nurse_id_label">ID de enfermero</string>
-    <string name="password_label">Contraseña</string>
-    <string name="login_button">Entrar</string>
-    <string name="back_home_button">Volver a Inicio</string>
-    <string name="toggle_password_desc">Ver contraseña</string>
-    <string name="logo_desc">Icono enfermero</string>
-    <string name="error_empty_fields">Rellena todos los campos</string>
-    <string name="login_success_msg">Login correcto</string>
-
-    <!-- Textos Pantalla Busqueda -->
+    <!-- Pantalla Buscar enfermero -->
     <string name="search_title">Buscar Enfermero</string>
     <string name="search_change_name">Buscar por nombre</string>
     <string name="search_change_id">Buscar por ID</string>
