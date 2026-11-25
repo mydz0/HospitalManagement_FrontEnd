@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="enf_background">#F0F4F9</color>
+    <color name="enf_primary">#007BBA</color>
+    <color name="enf_title">#1E3358</color>
+    <color name="enf_subtitle">#6B7A90</color>
+    <color name="enf_tile">#D3E4F0</color>
+    <color name="enf_white">#FFFFFF</color>
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -16,3 +24,4 @@
     <color name="text_dark">#FF1B2B44</color>
     <color name="medical_card">#FFD6E6F2</color>
 </resources>
+
