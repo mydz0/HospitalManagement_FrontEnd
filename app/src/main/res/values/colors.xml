@@ -8,12 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Paleta para el Login -->
-    <color name="medical_primary">#0077B6</color>
-    <color name="medical_secondary">#00B4D8</color>
-    <color name="medical_background">#F0F4F8</color>
-    <color name="medical_surface">#FFFFFF</color>
-    <color name="medical_error">#D62828</color>
-    <color name="medical_success">#2A9D8F</color>
-    <color name="text_dark">#1D3557</color>
+    <!-- colores de la app (los mismos nombres q el login) -->
+    <color name="medical_primary">#FF0077B6</color>
+    <color name="medical_background">#FFF0F4F8</color>
+    <color name="medical_error">#FFC62828</color>
+    <color name="medical_success">#FF2E7D32</color>
+    <color name="text_dark">#FF1B2B44</color>
+    <color name="medical_card">#FFD6E6F2</color>
 </resources>

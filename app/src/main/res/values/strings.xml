@@ -12,5 +12,4 @@
     <string name="logo_desc">Icono enfermero</string>
     <string name="error_empty_fields">Rellena todos los campos</string>
     <string name="login_success_msg">Login correcto</string>
-    <string name="error_invalid_credentials">ID, nombre o contraseña incorrectos</string>
 </resources>
